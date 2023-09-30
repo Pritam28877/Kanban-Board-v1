@@ -12,8 +12,9 @@ const KanbanBoad = () => {
       px-[40px]
     "
     >
-      <button
-        className="
+      <div className="m-auto">
+        <button
+          className="
         h-[60px]
         w-[350px]
         min-w-[350px]
@@ -23,9 +24,10 @@ const KanbanBoad = () => {
         border-2
         border-red-600     
         "
-      >
-        Add coloumn
-      </button>
+        >
+          Add coloumn
+        </button>
+      </div>
     </div>
   );
 };
