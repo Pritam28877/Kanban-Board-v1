@@ -1,6 +1,17 @@
 const KanbanBoad = () => {
   return (
-    <div>
+    <div
+      className="
+      m-auto
+      flex
+      min-h-screen
+      w-full
+      items-center
+      overflow-x-auto
+      overflow-y-hidden
+      px-[40px]
+    "
+    >
       <button
         className="
         h-[60px]
@@ -8,9 +19,9 @@ const KanbanBoad = () => {
         min-w-[350px]
         cursor-pointer
         rounded-lg
-        bg-blue-500
+        bg-mainBackgroundColor
         border-2
-        border-columnBackgroundColor     
+        border-red-600     
         "
       >
         Add coloumn
