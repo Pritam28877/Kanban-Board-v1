@@ -1,8 +1,11 @@
 import PlusIcon from "../icons/PlusIcon";
 import { useState } from "react";
+import ColumnContainer from "./ColumnContainer";
 
 const KanbanBoad = () => {
   const [columns, setColumns] = useState([]); // [ {id: 1, title: "To Do", cards: []}, {id: 2, title: "In Progress", cards: []}, {id: 3, title: "Done", cards: []}
+
+  console.log("columns", columns);
   const createNewColumn = () => {
     const newColumn = {
       id: columns.length + 1,
@@ -25,7 +28,12 @@ const KanbanBoad = () => {
       px-[40px]
     "
     >
-      <div className="m-auto">
+      <div className="m-auto flex gap-4">
+        <div className="flex gap-4 ">
+          {columns.map((column) => (
+            <ColumnContainer key={column.id} column={column} />
+          ))}
+        </div>
         <button
           onClick={() => createNewColumn()}
           className="
