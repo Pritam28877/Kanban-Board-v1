@@ -1,4 +1,17 @@
+import PlusIcon from "../icons/PlusIcon";
+import { useState } from "react";
+
 const KanbanBoad = () => {
+  const [columns, setColumns] = useState([]); // [ {id: 1, title: "To Do", cards: []}, {id: 2, title: "In Progress", cards: []}, {id: 3, title: "Done", cards: []}
+  const createNewColumn = () => {
+    const newColumn = {
+      id: columns.length + 1,
+      title: `Column ${columns.length + 1}`,
+      cards: [],
+    };
+    setColumns([...columns, newColumn]);
+    console.log("createNewColumn");
+  };
   return (
     <div
       className="
@@ -14,6 +27,7 @@ const KanbanBoad = () => {
     >
       <div className="m-auto">
         <button
+          onClick={() => createNewColumn()}
           className="
         h-[60px]
         w-[350px]
@@ -22,9 +36,13 @@ const KanbanBoad = () => {
         rounded-lg
         bg-mainBackgroundColor
         border-2
+        p-4
+        flex
+        gap-2
         border-red-600     
         "
         >
+          <PlusIcon />
           Add coloumn
         </button>
       </div>
