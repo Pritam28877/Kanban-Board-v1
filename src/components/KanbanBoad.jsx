@@ -13,8 +13,15 @@ const KanbanBoad = () => {
       cards: [],
     };
     setColumns([...columns, newColumn]);
-    
   };
+
+  
+  function deleteColumn(columnId) {
+    const filteredColumns = columns.filter((col) => col.id !== columnId);
+    setColumns(filteredColumns);
+
+  
+  }
   return (
     <div
       className="
@@ -31,7 +38,11 @@ const KanbanBoad = () => {
       <div className="m-auto flex gap-4">
         <div className="flex gap-4 ">
           {columns.map((column) => (
-            <ColumnContainer key={column.id} column={column} />
+            <ColumnContainer
+              key={column.id}
+              column={column}
+              deleteColumn={deleteColumn}
+            />
           ))}
         </div>
         <button

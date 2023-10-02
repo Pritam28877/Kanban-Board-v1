@@ -2,7 +2,8 @@ import PropTypes from "prop-types";
 import TrashIcon from "../icons/TrashIcon";
 
 const ColumnContainer = (props) => {
-  const { column } = props;
+  const { column ,deleteColumn } = props;
+  console.log( column.id);
   return (
     <div
       className=" 
@@ -48,6 +49,7 @@ const ColumnContainer = (props) => {
           {column.title}
         </div>
         <button
+          onClick={() => deleteColumn(column.id)}
           className="
         stroke-gray-500
         hover:stroke-white
@@ -68,6 +70,7 @@ const ColumnContainer = (props) => {
 
 ColumnContainer.propTypes = {
   column: PropTypes.object.isRequired,
+  deleteColumn: PropTypes.func.isRequired,
 };
 
 export default ColumnContainer;
