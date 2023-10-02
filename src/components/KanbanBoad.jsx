@@ -1,6 +1,7 @@
 import PlusIcon from "../icons/PlusIcon";
 import { useState } from "react";
 import ColumnContainer from "./ColumnContainer";
+import { Dndcondex } from "react-dnd";
 
 const KanbanBoad = () => {
   const [columns, setColumns] = useState([]); // [ {id: 1, title: "To Do", cards: []}, {id: 2, title: "In Progress", cards: []}, {id: 3, title: "Done", cards: []}
@@ -15,12 +16,9 @@ const KanbanBoad = () => {
     setColumns([...columns, newColumn]);
   };
 
-  
   function deleteColumn(columnId) {
     const filteredColumns = columns.filter((col) => col.id !== columnId);
     setColumns(filteredColumns);
-
-  
   }
   return (
     <div
