@@ -13,7 +13,7 @@ const KanbanBoad = () => {
       cards: [],
     };
     setColumns([...columns, newColumn]);
-    console.log("createNewColumn");
+    
   };
   return (
     <div
