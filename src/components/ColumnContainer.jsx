@@ -24,12 +24,33 @@ const ColumnContainer = (props) => {
       p-3
       font-bold
       border-4
-      border-columnBackgroundColor"
+      border-columnBackgroundColor
+      items-center
+      justify-between
+      flex"
       >
-        {column.title}
+        <div className="flex gap-3">
+          <div
+            className="
+        flex
+        justify-center
+        items-center
+        bg-columnBackgroundColor
+        px-2
+        py-1
+        text-sm 
+        rounded-full     
+        "
+          >
+            0
+          </div>
+          {column.title}
+        </div>
+        <button>Delete</button>
       </div>
 
-      <div>content</div>
+      <div className="flex flex-grow ">content</div>
+      <footer>Footer</footer>
     </div>
   );
 };
