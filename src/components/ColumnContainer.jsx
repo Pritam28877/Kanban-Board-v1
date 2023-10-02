@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import TrashIcon from "../icons/TrashIcon";
 
 const ColumnContainer = (props) => {
   const { column } = props;
@@ -46,7 +47,9 @@ const ColumnContainer = (props) => {
           </div>
           {column.title}
         </div>
-        <button>Delete</button>
+        <button>
+          <TrashIcon />
+        </button>
       </div>
 
       <div className="flex flex-grow ">content</div>
