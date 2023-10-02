@@ -47,7 +47,15 @@ const ColumnContainer = (props) => {
           </div>
           {column.title}
         </div>
-        <button>
+        <button
+          className="
+        stroke-gray-500
+        hover:stroke-white
+        hover:bg-columnBackgroundColor
+        rounded
+        px-1
+        py-2"
+        >
           <TrashIcon />
         </button>
       </div>
